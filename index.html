@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Indulgence - Home of High-Risk Processing</title>
+    <meta name="description" content="Next-gen POS for cannabis dispensaries & growers. Integrated with MarijuanaSoftware & Green.Money eDebit.">
+    <style>
+        :root { --green: #228B22; --gold: #DAA520; --neutral: #F5F5F5; --text: #333; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--neutral); color: var(--text); line-height: 1.6; }
+        header { background: var(--green); color: white; padding: 1rem; position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+        nav a { color: white; text-decoration: none; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg'); /* Replace with your hardware image */ height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        .hero h1 { font-size: 3rem; margin: 0; }
+        .hero p { font-size: 1.5rem; }
+        .cta { background: var(--gold); color: var(--green); padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .value-prop { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: auto; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+        .testimonials { background: var(--green); color: white; padding: 2rem; text-align: center; }
+        .testimonials blockquote { font-style: italic; margin: 1rem 0; }
+        footer { background: var(--text); color: white; text-align: center; padding: 1rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { flex-direction: column; } }
+        /* Age Gate Overlay */ .age-gate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 100; color: white; } .age-gate.hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Age Gate -->
+    <div id="ageGate" class="age-gate">
+        <div>
+            <h2>21+ Only</h2>
+            <p>Are you 21 or older?</p>
+            <button onclick="confirmAge()">Yes</button> <button onclick="window.location.href='https://www.responsiblemarijuana.org'">No</button>
+        </div>
+    </div>
+
+    <header>
+        <h2>Herbal Indulgence</h2>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#integrations">Integrations</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Home of High-Risk Processing</h1>
+        <p>Empowering cannabis dispensaries & growers with secure POS hardware and eDebit solutions.</p>
+        <a href="#demo" class="cta">Request Free Demo</a>
+    </section>
+
+    <section class="value-prop">
+        <div class="card">
+            <h3>Compliance-First POS</h3>
+            <p>METRC-integrated tracking for seamless reporting.</p>
+        </div>
+        <div class="card">
+            <h3>Seamless Integrations</h3>
+            <p>Powered by MarijuanaSoftware & Green.Money for instant eDebit.</p>
+        </div>
+        <div class="card">
+            <h3>Grower-Friendly Hardware</h3>
+            <p>Rugged devices built for farm-to-counter efficiency.</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Partners Say</h2>
+        <blockquote>"Cut processing time by 40% with Herbal Indulgence's high-risk solutions." — Dispensary X</blockquote>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Herbal Indulgence. PCI-DSS Compliant. <img src="ssl-badge.png" alt="SSL Secure" width="50"> <img src="marijuana-software-logo.png" alt="MarijuanaSoftware" width="100"> <img src="green-money-logo.png" alt="Green.Money" width="100"></p>
+    </footer>
+
+    <script>
+        // Age Gate Script
+        function confirmAge() { document.getElementById('ageGate').classList.add('hidden'); }
+        window.onload = () => { if (localStorage.getItem('ageVerified')) document.getElementById('ageGate').classList.add('hidden'); else localStorage.setItem('ageVerified', 'true'); };
+
+        // Simple Configurator JS (expand for Products page)
+        function showDemo() { alert('Scheduling your free POS demo...'); } // Replace with form modal
+    </script>
+</body>
+</html>
+/*
+Theme Name: Astra Child for Herbal Indulgence
+Template: astra
+Version: 1.0
+*/
+
+@import url("../astra/style.css");
+
+/* Custom Styles */
+:root { --green: #228B22; --gold: #DAA520; }
+body { background: var(--neutral); }
+.hero-section { background: var(--green); color: white; padding: 4rem 0; text-align: center; }
+.cta-button { background: var(--gold); color: var(--green); padding: 1rem 2rem; border: none; border-radius: 5px; cursor: pointer; }
+.value-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem auto; max-width: 1200px; }
+.card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+/* Responsive */
+@media (max-width: 768px) { .value-cards { grid-template-columns: 1fr; } }
+
+<?php
+// Enqueue child theme styles/scripts
+function herbalindulgnece_enqueue_styles() {
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), wp_get_theme()->get('Version'));
+    wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true); // Add your JS file
+}
+add_action('wp_enqueue_scripts', 'herbalindulgnece_enqueue_styles');
+
+// Custom Age Gate (integrates with plugin)
+function add_age_gate() {
+    if (!is_user_logged_in() && !isset($_COOKIE['age_verified'])) {
+        echo '<div id="age-gate"><!-- HTML from prototype --></div>';
+        echo '<script>/* JS from prototype */</script>';
+    }
+}
+add_action('wp_head', 'add_age_gate');
+
+// Add Partner Badges Shortcode
+function partner_badges() {
+    return '<img src="' . get_template_directory_uri() . '/images/marijuana-software.png" alt="MarijuanaSoftware" width="100"> <img src="' . get_template_directory_uri() . '/images/green-money.png" alt="Green.Money" width="100">';
+}
+add_shortcode('partners', 'partner_badges');
+
+// For Pricing Table: Use Gutenberg block or Elementor
